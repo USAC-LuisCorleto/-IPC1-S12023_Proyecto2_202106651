@@ -1,0 +1,40 @@
+package Imágenes;
+
+public abstract class ImageHandler {
+
+    protected String handledFileName;
+
+    /**
+     * Builds and returns an ImageHandler subclass type object which handles the
+     * file represented by the given name
+     *
+     * @param filename Name of the original file being handled by this object
+	*
+     */
+    public ImageHandler(String filename) {
+        this.handledFileName = filename;
+    }
+
+    /**
+     * Return the name of the original file being handled by this object
+     *
+     * @return filename Name of the original file being handled by this object
+	*
+     */
+    public final String getFileName() {
+        return this.handledFileName;
+    }
+
+    /**
+     * Reads handled file header and data in bytes
+	*
+     */
+    public abstract void readFile() throws Exception;
+
+    /**
+     * Generates all files from the original file. Generated files depend on the
+     * specific function of the ImageHandler subclass type
+	*
+     */
+    public abstract void generateFiles() throws Exception;
+}
